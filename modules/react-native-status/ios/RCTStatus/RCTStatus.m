@@ -202,7 +202,7 @@ RCT_EXPORT_METHOD(startNode:(RCTResponseSenderBlock)onResultCallback) {
             NSLog(@"error %@", error);
         }else
             NSLog(@"folderName: %@", folderName);
-#ifndef DEBUG
+#if DEBUG
         int devCluster = 1;
 #else
         int devCluster = 0;
