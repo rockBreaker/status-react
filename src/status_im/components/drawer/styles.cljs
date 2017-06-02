@@ -165,9 +165,9 @@
    :ios     {:font-size 17}})
 
 (def switch-account-container
-  {:align-items :center
+  {:align-items   :center
    :margin-bottom 10
-   :margin-top 10})
+   :margin-top    10})
 
 (defstyle switch-account-text
   {:color   common/color-light-blue

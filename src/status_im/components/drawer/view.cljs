@@ -156,10 +156,13 @@
 
 (defn switch-account []
   [touchable-highlight
-   {:on-press (fn []
-                (close-drawer)
-                (rf/dispatch [:set-in [:profile-edit :name] nil])
-                (rf/dispatch [:navigate-to-clean :accounts]))}
+   {:on-press #(utils/show-confirmation
+                (i18n/label :t/switch-users)
+                (str (i18n/label :t/switch-users) "?")
+                (fn []
+                  (close-drawer)
+                  (rf/dispatch [:set-in [:profile-edit :name] nil])
+                  (rf/dispatch [:navigate-to :accounts])))}
    [view st/switch-account-container
     [text {:style      st/switch-account-text
            :font       (if platform/android? :medium :default)
